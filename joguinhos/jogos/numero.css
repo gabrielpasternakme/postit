@@ -1,0 +1,146 @@
+body {
+    background: #0d0d1a;
+    color: #00ff9d;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 100vh;
+    margin: 0;
+    padding: 60px 20px 20px 20px; 
+    text-transform: lowercase;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 1.8rem; 
+    text-shadow: 0 0 10px #00ff9d;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+p {
+    color: #fff;
+    opacity: 0.8;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.game {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #00ff9d;
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 15px 0;
+    width: 100%; 
+    max-width: 320px; 
+    box-sizing: border-box;
+}
+
+input {
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    padding: 15px;
+    color: #fff;
+    font-size: 16px; 
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+    -webkit-appearance: none;
+}
+
+input:focus {
+    border-color: #00ff9d;
+    box-shadow: 0 0 10px #00ff9d;
+}
+
+button {
+    background: #00ff9d;
+    color: #0d0d1a;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    touch-action: manipulation;
+}
+
+button:active {
+    transform: scale(0.95); 
+}
+
+#hint {
+    font-size: 1.1rem;
+    font-weight: bold;
+    min-height: 1.5rem;
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+    text-align: center;
+}
+
+#tries {
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+#historyMenu {
+    position: fixed;
+    right: -280px; 
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: #111122;
+    border-left: 2px solid #00ff9d;
+    padding: 25px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    box-shadow: -10px 0 20px rgba(0,0,0,0.7);
+    box-sizing: border-box;
+}
+
+#historyMenu.open {
+    transform: translateX(-280px);
+}
+
+#toggleHistory {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    background: #00ff9d;
+    color: #0d0d1a;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1100;
+    box-shadow: 0 0 10px rgba(0,255,157,0.4);
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed rgba(0, 255, 157, 0.2);
+}
+
+@media (max-width: 350px) {
+    h1 { font-size: 1.5rem; }
+    .game { padding: 15px; }
+}
+
+@media (min-width: 600px) {
+    body { justify-content: center; padding-top: 20px; }
+    h1 { font-size: 2.5rem; }
+}

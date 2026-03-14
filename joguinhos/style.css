@@ -1,0 +1,176 @@
+:root {
+    --bg-color: #e0c9a6; 
+    --postit-yellow: #fff740;
+    --postit-blue: #7afcff;
+    --postit-pink: #ff7eb9;
+    --postit-green: #97ff91;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive; 
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(circle, #bc9b6a 1px, transparent 1px); 
+    background-size: 20px 20px;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-size: 2.2rem;
+    background: rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    margin-bottom: 30px;
+}
+
+.wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.postit {
+    width: 140px;
+    height: 140px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    font-size: 1.1rem;
+    
+    background: var(--postit-yellow);
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    transition: all 0.3s ease;
+    
+    border-bottom-right-radius: 50px 5px;
+}
+
+.postit:nth-child(4n+1) { background: var(--postit-yellow); transform: rotate(-3deg); }
+.postit:nth-child(4n+2) { background: var(--postit-blue); transform: rotate(2deg); }
+.postit:nth-child(4n+3) { background: var(--postit-pink); transform: rotate(-2deg); }
+.postit:nth-child(4n+4) { background: var(--postit-green); transform: rotate(3deg); }
+
+.postit::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    background: #ff4d4d;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    
+}
+
+.postit:hover {
+    transform: scale(1.15) rotate(0deg) !important;
+    z-index: 10;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 480px) {
+    .postit {
+        width: 110px;
+        height: 110px;
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+#switch-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10000;
+}
+
+.switch {
+    width: 40px;
+    height: 70px;
+    background: #eee;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #bbb;
+}
+
+.screw {
+    width: 6px;
+    height: 6px;
+    background: #999;
+    border-radius: 50%;
+}
+
+.button {
+    width: 15px;
+    height: 25px;
+    background: #ddd;
+    border: 1px solid #bbb;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+#flashlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9500; 
+    display: none;
+    opacity: 0; 
+    
+    background: radial-gradient(
+        circle 180px at var(--x, 50%) var(--y, 50%),
+        rgba(0,0,0,0) 0px,
+        rgba(0,0,0,0) 100px,
+        rgba(0,0,0,0.7) 160px,
+        rgba(0,0,0,0.95) 220px,
+        black 260px
+    );
+    
+}
+@media (max-width: 480px) {
+    #flashlight {
+        background: radial-gradient(
+            circle 250px at var(--x, 50%) var(--y, 50%),
+            transparent 0px,
+            transparent 150px,
+            rgba(0,0,0,0.9) 220px,
+            black 300px
+        );
+    }
+}
+body.dark-mode #overlay { opacity: 1; }
+body.dark-mode #flashlight { 
+    display: block;
+    opacity: 1; 
+}
+body.dark-mode .postit { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); }
+body.dark-mode .postit:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5) !important;
+}

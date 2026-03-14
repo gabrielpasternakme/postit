@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mural de postits</title>
+<link rel="icon" type="image/png" href="faviconn.PNG">
+<meta property="og:title" content="mural pica">
+<meta property="og:description" content="so um mural pra colocar na bio do insta vsf">
+<meta property="og:image" content="https://quando eu tiver o site.com/site/000.PNG">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="title-container">
+  <div class="title-postit">
+    <div class="pin"></div>
+    <b>mural de postits</b>
+  </div>
+
+  <div class="postit-menu" id="postit-menu">
+    <div class="pin"></div> 
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<div id="postit-editor" class="postit-editor">
+  
+  
+  <div class="pin"></div>
+  <input type="text" id="name" placeholder="seu nome" class="postit-name">
+  <textarea id="message" placeholder="deixe um recado (máx 30 palavras)" class="postit-message"></textarea>
+
+  <div id="color-options" class="color-options">
+    <div class="color-postit" data-color="#fef68a" style="background:#fef68a"></div>
+    <div class="color-postit" data-color="#ff7f7f" style="background:#ff7f7f"></div>
+    <div class="color-postit" data-color="#8aefff" style="background:#8aefff"></div>
+    <div class="color-postit" data-color="#aaff8a" style="background:#aaff8a"></div>
+    <div class="color-postit" data-color="#222222" style="background:#222222"></div>
+  </div>
+
+  <button id="send">colar postit</button>
+</div>
+
+<div id="modal-postit" class="modal-postit">
+  <div class="pin"></div>
+  <div class="content">
+    <b>vc pode arrastar os postits!</b><br>
+    <small>não consegui fazer eles aparecerem em lugares separados :D</small>
+  </div>
+</div>
+
+<div id="wall"></div>
+
+<script type="module" src="firebase.js"></script>
+</body>
+</html>

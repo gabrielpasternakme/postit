@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>adivinhe o número</title>
+<link rel="icon" type="image/png" href="numero.PNG">
+<link rel="stylesheet" href="numero.css">
+
+</head>
+
+<body>
+
+<h1>adivinhe o número</h1>
+
+<p>to pensando num número de <b>1 a 100</b>...</p>
+
+<div class="game">
+
+<input type="number" id="guess" placeholder="seu palpite" min="1" max="100">
+
+<button id="check">tentar</button>
+
+</div>
+
+<p id="hint">faça seu palpite</p>
+
+<p id="tries">tentativas: 0</p>
+<div id="toggleHistory">📜 seus dias de sorte</div>
+
+<div id="historyMenu">
+    <h3>seu histórico</h3>
+    <div id="historyList"></div>
+</div>
+<script src="numero.js"></script>
+
+</body>
+</html>

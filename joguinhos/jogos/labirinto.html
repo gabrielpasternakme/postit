@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>labirinto</title>
+<link rel="icon" type="image/png" href="labirinto.PNG">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body{
+background:#111;
+color:white;
+text-align:center;
+font-family:sans-serif;
+margin:0;
+}
+
+h2{
+margin-top:10px;
+}
+
+canvas{
+background:#222;
+border:3px solid white;
+width:90vw;
+height:90vw;
+max-width:600px;
+max-height:600px;
+}
+
+.controls{
+margin-top:20px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
+
+.row{
+display:flex;
+gap:15px;
+}
+
+.controls button{
+font-size:30px;
+width:70px;
+height:70px;
+border-radius:15px;
+border:none;
+background:#333;
+color:white;
+}
+
+.controls button:active{
+background:#666;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>labirinto</h2>
+
+<p id="timer">tempo: 0.00s</p>
+<p id="status">chegue no verde</p>
+
+<canvas id="maze" width="600" height="600"></canvas>
+
+<div class="controls">
+
+<button onclick="move('up')">↑</button>
+
+<div class="row">
+<button onclick="move('left')">←</button>
+<button onclick="move('down')">↓</button>
+<button onclick="move('right')">→</button>
+</div>
+
+</div>
+
+<script src="labirinto.js"></script>
+
+</body>
+</html>

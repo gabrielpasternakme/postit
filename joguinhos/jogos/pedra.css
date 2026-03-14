@@ -1,0 +1,227 @@
+:root {
+    --primary: #6e8efb;
+    --secondary: #a777e3;
+    --bg: #1a1a2e;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    margin-bottom: 10px;
+}
+
+.rooms {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+
+#createRoom { background: #4ecca3; color: #1a1a2e; }
+#joinRoom { background: #6e8efb; color: white; }
+
+button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.2);
+}
+
+.game {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.game button {
+    font-size: 3rem;
+    width: 100px;
+    height: 100px;
+    background: var(--glass);
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game button:active {
+    transform: scale(0.9);
+}
+
+.result {
+    text-align: center;
+    background: var(--glass);
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#winner {
+    font-size: 2rem;
+    color: #fca311;
+    margin: 10px 0;
+}
+
+#score, #streak {
+    margin: 5px;
+    opacity: 0.9;
+}
+
+#extra {
+    color: #ff4d4d;
+    font-weight: bold;
+    font-style: italic;
+}
+
+#roomInfo {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #4ecca3;
+}
+:root {
+    --primary: #6e8efb;
+    --secondary: #a777e3;
+    --bg: #1a1a2e;
+    --glass: rgba(255, 255, 255, 0.1);
+    --success: #4ecca3;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 1.8rem; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    text-align: center;
+    margin-top: 20px;
+}
+
+.rooms {
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: white;
+    flex: 1 1 100px; 
+    min-width: 80px;
+}
+
+button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+    flex: 1 1 auto;
+}
+
+#createRoom { background: var(--success); color: #1a1a2e; }
+#joinRoom { background: var(--primary); color: white; }
+
+
+
+.result {
+    text-align: center;
+    background: var(--glass);
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+#winner {
+    font-size: 1.5rem;
+    color: #fca311;
+    margin: 10px 0;
+}
+
+.stats {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#score { font-size: 1.2rem; }
+#streak { font-size: 1rem; color: #ffeb3b; }
+
+@media (min-width: 600px) {
+    h1 { font-size: 2.5rem; }
+    .game button {
+        width: 100px;
+        height: 100px;
+        font-size: 3.5rem;
+    }
+    .rooms { flex-wrap: nowrap; }
+}
+
+@media screen and (max-width: 768px) {
+    input { font-size: 16px; } 
+}

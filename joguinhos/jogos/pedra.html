@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT multiplayer</title>
+    <link rel="stylesheet" href="pedra.css">
+    <link rel="icon" type="image/png" href="pedra.PNG">
+</head>
+<body>
+
+    <h1>PEDRA PAPEL TESOURA</h1>
+
+    <div class="rooms">
+        <input id="userName" placeholder="Seu Nick" style="width: 120px;">
+        <button id="createRoom">criar sala</button>
+        <input id="roomCode" maxlength="4" placeholder="CÓDIGO">
+        <button id="joinRoom">entrar</button>
+    </div>
+    <p id="roomInfo">modo: jogando contra bot</p>
+
+    <div class="stats">
+        <h2 id="score">vc 0 x 0 bot</h2>
+        <h3 id="streak">streak: 0</h3>
+    </div>
+
+    <div class="game">
+        <button data-choice="pedra" title="pedra">✊</button>
+        <button data-choice="papel" title="papel">🖐</button>
+        <button data-choice="tesoura" title="tesoura">✌️</button>
+    </div>
+
+    <div class="result">
+        <div style="display: flex; justify-content: space-around;">
+            <p id="player">vc: -</p>
+            <p id="bot">rival: -</p>
+        </div>
+        <h2 id="winner">faça sua jogada!</h2>
+        <p id="extra"></p>
+    </div>
+
+    <script type="module" src="pedra.js"></script>
+</body>
+</html>
