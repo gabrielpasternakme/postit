@@ -201,12 +201,12 @@ const menuCardsData = [
   {
     img: "joguinhos.png",
     class: "menu-black",
-    link: "/joguinhos"
+    link: "/joguinhos/index.html"
   },
   {
     img: "coup.png",
     class: "menu-white",
-    link: "/coup"
+    link: "/coup/index.html"
   }
 ];
 
